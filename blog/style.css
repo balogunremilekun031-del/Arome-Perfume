@@ -1,0 +1,13 @@
+body {
+  overflow-x: hidden !important;
+}
+
+.navbar {
+  background-color: #fefefe !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+.nav-icon {
+  display: flex;
+  gap: 10px;
+}
