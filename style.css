@@ -254,8 +254,345 @@ body {
 }
 
 /* =============================================
-   GENERAL STYLES
+   RESPONSIVE FIXES
    ============================================= */
+
+/* Global — prevent any element from causing horizontal scroll */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Navbar logo — cap width so it never overflows */
+.navbar-brand img,
+.navbar img[alt] {
+  max-width: 130px;
+  width: 100%;
+  height: auto;
+}
+
+/* Hero banner text — scale down on small screens */
+/* =============================================
+   HERO CAROUSEL
+   ============================================= */
+
+.hero-carousel .carousel-item {
+  transition: transform 0.7s ease-in-out !important;
+}
+
+/* Background-image based slide — fully responsive */
+.hero-slide {
+  position: relative;
+  width: 100%;
+  height: 92vh;
+  min-height: 420px;
+  max-height: 860px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+/* Text content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 5%;
+  max-width: 680px;
+  color: #1a1a1a;
+  pointer-events: all;
+}
+
+.hero-tag {
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.65);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-family: "Playfair", serif;
+  font-size: clamp(2rem, 5.5vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 0.2rem;
+  color: #1a1a1a;
+  text-shadow: none;
+}
+
+.btn-hero {
+  background-color: #5d3754 !important;
+  color: #fff !important;
+  border: 2px solid #5d3754 !important;
+  padding: 12px 36px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease, border-color 0.25s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-hero:hover,
+.btn-hero:focus {
+  background-color: transparent !important;
+  color: #5d3754 !important;
+  border-color: #5d3754 !important;
+  transform: translateY(-2px);
+  box-shadow: none !important;
+}
+
+/* Carousel controls — bigger & more visible */
+.hero-carousel .carousel-control-prev,
+.hero-carousel .carousel-control-next {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  backdrop-filter: blur(4px);
+  transition: background 0.25s ease;
+  z-index: 10;
+  opacity: 1;
+}
+
+.hero-carousel .carousel-control-prev {
+  left: 16px;
+}
+
+.hero-carousel .carousel-control-next {
+  right: 16px;
+}
+
+.hero-carousel .carousel-control-prev:hover,
+.hero-carousel .carousel-control-next:hover {
+  background: rgba(93, 55, 84, 0.7);
+}
+
+.hero-carousel .carousel-control-prev-icon,
+.hero-carousel .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+  filter: invert(0);
+}
+
+/* Ensure hero-slide doesn't block controls */
+.hero-slide {
+  position: relative;
+  width: 100%;
+  height: 92vh;
+  min-height: 420px;
+  max-height: 860px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 5%;
+  max-width: 680px;
+  color: #1a1a1a;
+  pointer-events: all;
+}
+
+/* Mobile adjustments */
+@media (max-width: 575.98px) {
+  .hero-slide {
+    height: 70vw;
+    min-height: 320px;
+    background-position: 70% center;
+  }
+
+  .hero-content {
+    padding: 0 1.25rem;
+  }
+
+  .hero-tag {
+    letter-spacing: 2px;
+    font-size: 0.65rem;
+  }
+
+  .btn-hero {
+    padding: 10px 24px;
+    font-size: 0.75rem;
+  }
+}
+
+/* 50% OFF section */
+.limi {
+  font-size: clamp(2.5rem, 8vw, 80px);
+}
+.off {
+  font-size: clamp(2.8rem, 9vw, 89px);
+}
+.time {
+  text-align: center;
+  margin-top: clamp(20px, 5vw, 90px);
+  margin-left: clamp(0px, 4vw, 80px);
+  padding: 0 1rem;
+}
+
+/* Sections — replace fixed large margins with fluid ones */
+.section-off {
+  margin-top: clamp(40px, 6vw, 100px);
+}
+.trusted-section {
+  padding-top: clamp(40px, 5vw, 80px);
+  margin-top: clamp(30px, 4vw, 60px);
+  padding-bottom: clamp(40px, 5vw, 80px);
+}
+.subscription {
+  margin-top: clamp(30px, 4vw, 60px) !important;
+  padding-bottom: clamp(20px, 3vw, 40px) !important;
+}
+.benefit {
+  margin-top: clamp(20px, 3vw, 40px) !important;
+}
+.help {
+  margin-top: clamp(20px, 4vw, 130px) !important;
+}
+.choose {
+  margin-top: clamp(30px, 5vw, 100px) !important;
+}
+.product {
+  margin-top: clamp(40px, 5vw, 100px);
+  margin-bottom: clamp(20px, 3vw, 50px);
+}
+.container-all {
+  margin-top: clamp(40px, 6vw, 100px);
+}
+.arome-image {
+  margin-top: clamp(30px, 5vw, 100px) !important;
+}
+.image1 {
+  margin-top: clamp(20px, 4vw, 100px);
+}
+
+/* About page — stats card negative translate fix */
+.customer-section {
+  translate: none;
+  transform: none;
+}
+
+/* Newsletter input — fix 70px padding overflow */
+.btn-group,
+.btngroup {
+  padding: 8px 20px 8px 10px;
+}
+
+/* Authentic section — reduce padding on mobile */
+.authentic-sec {
+  padding-left: clamp(1rem, 4vw, 3rem) !important;
+  padding-right: clamp(1rem, 4vw, 3rem) !important;
+}
+
+/* Questions overlay card — prevent overflow on small screens */
+.questions {
+  position: static !important;
+  transform: none !important;
+  width: 100% !important;
+  margin-top: 1rem;
+  border-radius: 12px;
+}
+
+/* arome-play heading — scale on mobile */
+.arome-play {
+  font-size: clamp(1.5rem, 4vw, 40px);
+}
+
+/* About page col-lg-5 mx-5 — mx-5 causes overflow on mobile */
+@media (max-width: 991.98px) {
+  .col-lg-5.mx-5 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 1.5rem;
+  }
+  /* Banner text hidden on very small screens */
+  .banner-text {
+    display: none;
+  }
+  /* Section off stacks properly */
+  .section-off .row {
+    flex-direction: column;
+  }
+  .limited {
+    padding: 2rem 1rem;
+  }
+  /* Subscription section */
+  .subscription .row {
+    flex-direction: column;
+  }
+  /* Contact help section */
+  .help {
+    margin-top: 2rem !important;
+  }
+  /* Footer newsletter input */
+  .btn-group input[type="email"] {
+    width: 100%;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* Cards full width on xs */
+  .trusted-card .col {
+    width: 100%;
+  }
+  /* Reduce footer padding on mobile */
+  .footer-arome .row {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  /* Breadcrumb containers */
+  .home-container,
+  .home-container-faq,
+  .contact-container {
+    padding: 20px 1rem;
+  }
+  /* FAQ questions overlay */
+  .questions {
+    padding: 1rem !important;
+  }
+  /* Ask section */
+  .ask-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  /* Meet experts image height */
+  .expert-img-wrapper img {
+    height: 260px;
+  }
+  /* Playfair heading */
+  .Playfair {
+    font-size: 1.2rem;
+  }
+  /* Intel letter spacing too wide on mobile */
+  .intel {
+    letter-spacing: 0.5px;
+  }
+  .intel2 {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
+}
 
 .rating-star,
 .card-text,
@@ -299,22 +636,22 @@ body {
 
 .trusted-section {
   background-color: #f8f8f8 !important;
-  padding-top: 100px;
-  margin-top: 110px;
-  padding-bottom: 100px;
+  padding-top: clamp(40px, 5vw, 80px);
+  margin-top: clamp(30px, 4vw, 60px);
+  padding-bottom: clamp(40px, 5vw, 80px);
 }
 
 .trust {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .subscription {
-  margin-top: 130px !important;
-  padding-bottom: 150px !important;
+  margin-top: clamp(30px, 4vw, 60px) !important;
+  padding-bottom: clamp(20px, 3vw, 40px) !important;
 }
 
 .benefit {
-  margin-top: 150px !important;
+  margin-top: clamp(20px, 3vw, 40px) !important;
 }
 
 .btn-secondary {
@@ -410,32 +747,139 @@ body {
 }
 
 .footer-arome {
-  background-color: #1c1c1c;
-  padding-top: 50px;
-  padding-bottom: 100px;
+  background-color: #1a1a1a;
+  padding-top: 0;
+  padding-bottom: 0;
+  width: 100%;
+  margin: 0;
 }
 
-.useful-link {
-  text-decoration: none !important;
-  color: white !important;
-  transition: all 0.3s ease;
+.footer-heading {
+  font-family: "Playfair", serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #fff;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: #5d3754;
+}
+
+.footer-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.25s ease, padding-left 0.25s ease;
   display: inline-block;
 }
 
-.useful-link:hover {
-  transform: translateX(10px);
+.footer-links a:hover {
+  color: #fff;
+  padding-left: 6px;
 }
 
+/* Newsletter input */
+.footer-newsletter-inner {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50px;
+  overflow: hidden;
+  transition: border-color 0.25s ease;
+}
+
+.footer-newsletter-inner:focus-within {
+  border-color: #5d3754;
+}
+
+.footer-newsletter-inner input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  color: #fff;
+  font-size: 0.82rem;
+  min-width: 0;
+}
+
+.footer-newsletter-inner input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.footer-newsletter-inner button {
+  flex-shrink: 0;
+  background: #5d3754;
+  border: none;
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.footer-newsletter-inner button:hover {
+  background: #9b5e8e;
+  transform: scale(1.08);
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 16px 0;
+  text-align: center;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.35);
+}
+
+/* Social icons */
 .foot-icon {
-  border-radius: 100px;
-  background-color: white !important;
-  width: 50px;
-  padding: 4px;
-  color: #000 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff !important;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
 .foot-icon:hover {
-  transform: translateY(-1px) !important;
+  background-color: #5d3754;
+  transform: translateY(-3px);
+  color: #fff !important;
 }
 
 .Playfair {
@@ -849,15 +1293,7 @@ body {
   animation: pulseGlow 0.6s ease;
 }
 
-/* --- Footer social icons: spin on hover --- */
-.foot-icon {
-  transition: transform 0.3s ease, background-color 0.3s ease !important;
-}
-.foot-icon:hover {
-  transform: rotate(15deg) scale(1.15) !important;
-  background-color: #5d3754 !important;
-  color: #fff !important;
-}
+/* --- Footer social icons: hover effect --- */
 
 /* --- Stat numbers: count-up entrance --- */
 .product .col-lg-3 h1,
