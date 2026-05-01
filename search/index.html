@@ -1,484 +1,702 @@
 ﻿<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search – Arome</title>
+    <link rel="icon" type="image/png" href="../image/perfume111.png" />
+    <link rel="stylesheet" href="../style.css" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400..800&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <base href="/Arome-Perfume/">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search – Arome</title>
-  <link rel="icon" type="image/png" href="image/perfume111.png" />
-  <link rel="stylesheet" href="style.css" />
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400..800&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
-
-  <style>
-    /* Search page specific styles */
-    .search-hero {
-      background-color: #5d3754;
-      padding: 60px 0 40px;
-    }
-
-    .search-hero h1 {
-      font-family: "Playfair", serif;
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #fff;
-    }
-
-    .search-hero p {
-      color: rgba(255,255,255,0.75);
-      font-size: 1rem;
-    }
-
-    .search-bar-wrapper {
-      position: relative;
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .search-bar-wrapper input {
-      width: 100%;
-      padding: 18px 60px 18px 24px;
-      border: none;
-      border-radius: 50px;
-      font-size: 1rem;
-      outline: none;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-    }
-
-    .search-bar-wrapper button {
-      position: absolute;
-      right: 6px;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: #5d3754;
-      border: none;
-      border-radius: 50px;
-      width: 46px;
-      height: 46px;
-      color: #fff;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.25s ease;
-    }
-
-    .search-bar-wrapper button:hover {
-      background-color: #3e2238;
-    }
-
-    .filter-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .filter-tag {
-      background: rgba(255,255,255,0.15);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 50px;
-      padding: 6px 18px;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: background 0.2s ease;
-      text-decoration: none;
-    }
-
-    .filter-tag:hover,
-    .filter-tag.active {
-      background: #fff;
-      color: #5d3754;
-    }
-
-    .results-section {
-      padding: 60px 0;
-      background-color: #fafafa;
-      min-height: 60vh;
-    }
-
-    .results-count {
-      font-size: 0.9rem;
-      color: #888;
-      margin-bottom: 30px;
-    }
-
-    .product-card {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 32px rgba(93,55,84,0.12);
-    }
-
-    .product-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .product-card .card-body {
-      padding: 16px;
-    }
-
-    .product-card .card-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .product-card .price {
-      color: #5d3754;
-      font-weight: 700;
-      font-size: 1rem;
-    }
-
-    .product-card .price-old {
-      text-decoration: line-through;
-      color: #aaa;
-      font-size: 0.85rem;
-      margin-left: 6px;
-    }
-
-    .product-card .stars {
-      color: #5d3754;
-      font-size: 0.85rem;
-    }
-
-    .no-results {
-      text-align: center;
-      padding: 80px 20px;
-      display: none;
-    }
-
-    .no-results i {
-      font-size: 4rem;
-      color: #ddd;
-      margin-bottom: 20px;
-    }
-
-    .no-results h4 {
-      color: #555;
-    }
-
-    .no-results p {
-      color: #aaa;
-    }
-
-    .popular-section {
-      padding: 50px 0;
-      background: #fff;
-    }
-
-    .section-label {
-      font-size: 0.75rem;
-      letter-spacing: 3px;
-      color: #5d3754;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- NAVBAR -->
-  <section>
-    <nav class="navbar navbar-expand-lg sticky-top">
-      <div class="container-fluid" data-aos="fade-down">
-        <div>
-          <img src="image/arome-logo.jpg" alt="Arome" width="150px">
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item"><a class="nav-link fw-bold" href="index.html">HOME</a></li>
-            <li class="nav-item dropdown mega-dropdown-custom hover-open">
-              <a class="nav-link dropdown-toggle fw-bold" href="#" data-bs-toggle="dropdown">SHOP</a>
-              <div class="dropdown-menu mega-menu-custom p-4 shadow-lg">
-                <div class="row g-4">
-                  <div class="col-lg-3">
-                    <p class="menu-title">Categories</p>
-                    <a href="#" class="dropdown-item menu-item">Eau de Parfum</a>
-                    <a href="#" class="dropdown-item menu-item">Eau de Toilette</a>
-                    <a href="#" class="dropdown-item menu-item">Body Mists</a>
-                    <a href="#" class="dropdown-item menu-item">Travel Sizes</a>
-                  </div>
-                  <div class="col-lg-3">
-                    <p class="menu-title">All Perfumes</p>
-                    <a href="#" class="dropdown-item menu-item">Men's Fragrances</a>
-                    <a href="#" class="dropdown-item menu-item">Women's Fragrances</a>
-                    <a href="#" class="dropdown-item menu-item">Unisex Perfumes</a>
-                    <a href="#" class="dropdown-item menu-item">New Arrivals</a>
-                  </div>
-                  <div class="col-lg-3">
-                    <p class="menu-title">Offers &amp; Discounts</p>
-                    <a href="#" class="dropdown-item menu-item">Limited Editions</a>
-                    <a href="#" class="dropdown-item menu-item">Best Sellers</a>
-                    <a href="#" class="dropdown-item menu-item">Seasonal Sales</a>
-                    <a href="#" class="dropdown-item menu-item">Clearance</a>
-                  </div>
-                  <div class="col-lg-3 d-none d-lg-block">
-                    <img src="image/imageperf" class="img-fluid rounded" alt="Offer">
-                    <p class="text-center mt-2 fw-semibold small">Up to 50% Off</p>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fw-bold" href="/blog/index.html">BLOG</a>
-            </li>
-            <li class="nav-item dropdown hover-open">
-              <a class="nav-link dropdown-toggle fw-bold" href="/about/index.html" data-bs-toggle="dropdown">PAGES</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/about/index.html">About Us</a></li>
-                <li><a class="dropdown-item" href="/faq/index.html">FAQ Page</a></li>
-                <li><a class="dropdown-item" href="/contact/index.html">Contact Us</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fw-bold" href="/contact/index.html">CONTACT</a>
-            </li>
-          </ul>
-          <div class="nav-icon fs-5">
-            <a class="text-dark" href="/search/index.html" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a>
-            <a class="text-dark" href="" aria-label="Account"><i class="fa-regular fa-user"></i></a>
-            <a class="text-dark position-relative" href="" aria-label="Wishlist">
-              <i class="fa-regular fa-heart"></i>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:0.6rem;">5</span>
-            </a>
-            <a class="text-dark position-relative" href="" aria-label="Cart">
-              <i class="fa-solid fa-basket-shopping"></i>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:0.6rem;">2</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </section>
-
-  <!-- SEARCH HERO -->
-  <div class="search-hero text-center px-3">
-    <p class="section-label mb-2" style="color:rgba(255,255,255,0.6);">AROME STORE</p>
-    <h1 class="mb-2">What are you looking for?</h1>
-    <p class="mb-4">Search our full collection of fragrances, gifts & more</p>
-
-    <div class="search-bar-wrapper">
-      <input type="text" id="searchInput" placeholder="Search perfumes, brands, categories…" autocomplete="off" />
-      <button onclick="runSearch()" aria-label="Search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-    </div>
-
-    <!-- Quick filter tags -->
-    <div class="filter-tags mt-4">
-      <a href="#" class="filter-tag" onclick="quickSearch('Eau de Parfum')">Eau de Parfum</a>
-      <a href="#" class="filter-tag" onclick="quickSearch('Women')">Women</a>
-      <a href="#" class="filter-tag" onclick="quickSearch('Men')">Men</a>
-      <a href="#" class="filter-tag" onclick="quickSearch('New Arrivals')">New Arrivals</a>
-      <a href="#" class="filter-tag" onclick="quickSearch('Best Sellers')">Best Sellers</a>
-      <a href="#" class="filter-tag" onclick="quickSearch('Gift Sets')">Gift Sets</a>
-    </div>
-  </div>
-
-  <!-- RESULTS SECTION -->
-  <section class="results-section">
-    <div class="container">
-
-      <!-- No results state -->
-      <div class="no-results" id="noResults">
-        <i class="fa-regular fa-face-sad-tear"></i>
-        <h4>No results found</h4>
-        <p>Try a different keyword or browse our popular picks below.</p>
-      </div>
-
-      <!-- Results grid -->
-      <div id="resultsGrid">
-        <p class="results-count" id="resultsCount"></p>
-        <div class="row g-4" id="resultsContainer"></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- POPULAR PICKS (shown before search) -->
-  <section class="popular-section" id="popularSection">
-    <div class="container">
-      <p class="section-label mb-1">TRENDING NOW</p>
-      <h3 class="fw-bold mb-4" style="font-family:'Playfair',serif;">Popular Picks</h3>
-      <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="product-card">
-            <img src="image/per1.webp" alt="Klein Women Spray">
-            <div class="card-body">
-              <div class="stars">★★★★★</div>
-              <p class="card-title mt-1">Klein Women Spray</p>
-              <span class="price">$30.00</span><span class="price-old">$60.00</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="product-card">
-            <img src="image/per2.png" alt="Men Caramel Dream">
-            <div class="card-body">
-              <div class="stars">★★★★★</div>
-              <p class="card-title mt-1">Men Caramel Dream</p>
-              <span class="price">$50.00</span><span class="price-old">$70.00</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="product-card">
-            <img src="image/per3.png" alt="Black Wild Fragrance">
-            <div class="card-body">
-              <div class="stars">★★★★☆</div>
-              <p class="card-title mt-1">Black Wild Fragrance</p>
-              <span class="price">$99.00</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="product-card">
-            <img src="image/per4.png" alt="Arome Virtual Flower">
-            <div class="card-body">
-              <div class="stars">★★★★★</div>
-              <p class="card-title mt-1">Arome Virtual Flower</p>
-              <span class="price">$200.00</span><span class="price-old">$300.00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer-arome text-white mt-0">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="foot-all col-12 col-md-6 col-lg-3 mt-4">
-          <img src="image/imagee3.avif" width="120px" alt="Arome">
-          <p class="mt-3">Arome® was founded on the belief that wellness is more than just a necessity—it's a powerful expression of self-care and vitality.</p>
-          <ul class="d-flex fs-4 list-unstyled gap-2 mt-3">
-            <li><a class="text-decoration-none" href=""><i class="fa-brands fa-x-twitter foot-icon"></i></a></li>
-            <li><a class="text-decoration-none" href=""><i class="fa-brands fa-instagram foot-icon"></i></a></li>
-            <li><a class="text-decoration-none" href=""><i class="fa-brands fa-facebook-f foot-icon"></i></a></li>
-            <li><a class="text-decoration-none" href=""><i class="fa-brands fa-pinterest-p foot-icon"></i></a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 mt-4">
-          <h4 class="fw-bold Playfair">Useful Links</h4>
-          <ul class="list-unstyled">
-            <li class="mt-2"><a class="useful-link intel" href="#">My Account</a></li>
-            <li class="mt-2"><a class="useful-link intel" href="#">Shopping Cart</a></li>
-            <li class="mt-2"><a class="useful-link intel" href="#">My Wishlist</a></li>
-            <li class="mt-2"><a class="useful-link intel" href="#">Our Store Info</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 mt-4">
-          <h4 class="fw-bold Playfair">Information</h4>
-          <ul class="list-unstyled">
-            <li class="mt-2"><a href="#" class="useful-link intel">Order Tracking</a></li>
-            <li class="mt-2"><a href="#" class="useful-link intel">Privacy Policy</a></li>
-            <li class="mt-2"><a href="#" class="useful-link intel">Terms of Service</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 mt-4">
-          <h4 class="fw-bold Playfair">Newsletter</h4>
-          <p class="intel">Subscribe to receive news and updates.</p>
-          <div class="btn-group mt-2">
-            <input type="email" placeholder="Enter your email" class="btn-group me-5 mt-1">
-            <button class="btn btn-group"><i class="bi bi-arrow-right"></i></button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-
-  <script>
-    // Product catalogue — extend this list as your store grows
-    const products = [
-      { name: "Klein Women Spray",      price: "$30.00", old: "$60.00", stars: "★★★★★", img: "image/per1.webp",        tags: ["women","spray","eau de parfum"] },
-      { name: "Men Caramel Dream",       price: "$50.00", old: "$70.00", stars: "★★★★★", img: "image/per2.png",         tags: ["men","caramel","dream"] },
-      { name: "Black Wild Fragrance",    price: "$99.00", old: "",       stars: "★★★★☆", img: "image/per3.png",         tags: ["men","wild","black","unisex"] },
-      { name: "Arome Virtual Flower",    price: "$200.00",old: "$300.00",stars: "★★★★★", img: "image/per4.png",         tags: ["women","flower","gift sets"] },
-      { name: "Aersace",                 price: "$50.99", old: "",       stars: "★★★★★", img: "image/per5.png",         tags: ["men","unisex","best sellers"] },
-      { name: "Rose Incense",            price: "$45.00", old: "$60.00", stars: "★★★★★", img: "image/per6.png",         tags: ["women","rose","new arrivals","eau de parfum"] },
-      { name: "Signature Oud",           price: "$120.00",old: "",       stars: "★★★★☆", img: "image/per111.webp",      tags: ["men","oud","best sellers"] },
-      { name: "Travel Size Collection",  price: "$25.00", old: "$35.00", stars: "★★★★★", img: "image/imagepicabout.webp",tags: ["travel","gift sets","new arrivals"] },
-    ];
-
-    const searchInput  = document.getElementById('searchInput');
-    const resultsGrid  = document.getElementById('resultsGrid');
-    const resultsCount = document.getElementById('resultsCount');
-    const resultsContainer = document.getElementById('resultsContainer');
-    const noResults    = document.getElementById('noResults');
-    const popularSection = document.getElementById('popularSection');
-
-    // Run search on Enter key
-    searchInput.addEventListener('keydown', e => {
-      if (e.key === 'Enter') runSearch();
-    });
-
-    // Run search on input (live)
-    searchInput.addEventListener('input', () => {
-      if (searchInput.value.trim().length > 1) runSearch();
-      else resetView();
-    });
-
-    function quickSearch(term) {
-      searchInput.value = term;
-      runSearch();
-      searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-
-    function runSearch() {
-      const query = searchInput.value.trim().toLowerCase();
-      if (!query) { resetView(); return; }
-
-      const filtered = products.filter(p =>
-        p.name.toLowerCase().includes(query) ||
-        p.tags.some(t => t.includes(query))
-      );
-
-      popularSection.style.display = 'none';
-
-      if (filtered.length === 0) {
-        resultsGrid.style.display = 'none';
-        noResults.style.display = 'block';
-        return;
+    <style>
+      /* Search page specific styles */
+      .search-hero {
+        background-color: #5d3754;
+        padding: 60px 0 40px;
       }
 
-      noResults.style.display = 'none';
-      resultsGrid.style.display = 'block';
-      resultsCount.textContent = `${filtered.length} result${filtered.length > 1 ? 's' : ''} for "${searchInput.value.trim()}"`;
+      .search-hero h1 {
+        font-family: "Playfair", serif;
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #fff;
+      }
 
-      resultsContainer.innerHTML = filtered.map(p => `
+      .search-hero p {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 1rem;
+      }
+
+      .search-bar-wrapper {
+        position: relative;
+        max-width: 680px;
+        margin: 0 auto;
+      }
+
+      .search-bar-wrapper input {
+        width: 100%;
+        padding: 18px 60px 18px 24px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        outline: none;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      .search-bar-wrapper button {
+        position: absolute;
+        right: 6px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #5d3754;
+        border: none;
+        border-radius: 50px;
+        width: 46px;
+        height: 46px;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.25s ease;
+      }
+
+      .search-bar-wrapper button:hover {
+        background-color: #3e2238;
+      }
+
+      .filter-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .filter-tag {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50px;
+        padding: 6px 18px;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        text-decoration: none;
+      }
+
+      .filter-tag:hover,
+      .filter-tag.active {
+        background: #fff;
+        color: #5d3754;
+      }
+
+      .results-section {
+        padding: 60px 0;
+        background-color: #fafafa;
+        min-height: 60vh;
+      }
+
+      .results-count {
+        font-size: 0.9rem;
+        color: #888;
+        margin-bottom: 30px;
+      }
+
+      .product-card {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 32px rgba(93, 55, 84, 0.12);
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+
+      .product-card .card-body {
+        padding: 16px;
+      }
+
+      .product-card .card-title {
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      .product-card .price {
+        color: #5d3754;
+        font-weight: 700;
+        font-size: 1rem;
+      }
+
+      .product-card .price-old {
+        text-decoration: line-through;
+        color: #aaa;
+        font-size: 0.85rem;
+        margin-left: 6px;
+      }
+
+      .product-card .stars {
+        color: #5d3754;
+        font-size: 0.85rem;
+      }
+
+      .no-results {
+        text-align: center;
+        padding: 80px 20px;
+        display: none;
+      }
+
+      .no-results i {
+        font-size: 4rem;
+        color: #ddd;
+        margin-bottom: 20px;
+      }
+
+      .no-results h4 {
+        color: #555;
+      }
+
+      .no-results p {
+        color: #aaa;
+      }
+
+      .popular-section {
+        padding: 50px 0;
+        background: #fff;
+      }
+
+      .section-label {
+        font-size: 0.75rem;
+        letter-spacing: 3px;
+        color: #5d3754;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <section>
+      <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid" data-aos="fade-down">
+          <div>
+            <img src="../image/arome-logo.jpg" alt="Arome" width="150px" />
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="../index.html">HOME</a>
+              </li>
+              <li class="nav-item dropdown mega-dropdown-custom hover-open">
+                <a
+                  class="nav-link dropdown-toggle fw-bold"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  >SHOP</a
+                >
+                <div class="dropdown-menu mega-menu-custom p-4 shadow-lg">
+                  <div class="row g-4">
+                    <div class="col-lg-3">
+                      <p class="menu-title">Categories</p>
+                      <a href="#" class="dropdown-item menu-item"
+                        >Eau de Parfum</a
+                      >
+                      <a href="#" class="dropdown-item menu-item"
+                        >Eau de Toilette</a
+                      >
+                      <a href="#" class="dropdown-item menu-item">Body Mists</a>
+                      <a href="#" class="dropdown-item menu-item"
+                        >Travel Sizes</a
+                      >
+                    </div>
+                    <div class="col-lg-3">
+                      <p class="menu-title">All Perfumes</p>
+                      <a href="#" class="dropdown-item menu-item"
+                        >Men's Fragrances</a
+                      >
+                      <a href="#" class="dropdown-item menu-item"
+                        >Women's Fragrances</a
+                      >
+                      <a href="#" class="dropdown-item menu-item"
+                        >Unisex Perfumes</a
+                      >
+                      <a href="#" class="dropdown-item menu-item"
+                        >New Arrivals</a
+                      >
+                    </div>
+                    <div class="col-lg-3">
+                      <p class="menu-title">Offers &amp; Discounts</p>
+                      <a href="#" class="dropdown-item menu-item"
+                        >Limited Editions</a
+                      >
+                      <a href="#" class="dropdown-item menu-item"
+                        >Best Sellers</a
+                      >
+                      <a href="#" class="dropdown-item menu-item"
+                        >Seasonal Sales</a
+                      >
+                      <a href="#" class="dropdown-item menu-item">Clearance</a>
+                    </div>
+                    <div class="col-lg-3 d-none d-lg-block">
+                      <img
+                        src="../image/imageperf"
+                        class="img-fluid rounded"
+                        alt="Offer"
+                      />
+                      <p class="text-center mt-2 fw-semibold small">
+                        Up to 50% Off
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="../blog/index.html">BLOG</a>
+              </li>
+              <li class="nav-item dropdown hover-open">
+                <a
+                  class="nav-link dropdown-toggle fw-bold"
+                  href="../about/index.html"
+                  data-bs-toggle="dropdown"
+                  >PAGES</a
+                >
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="../about/index.html"
+                      >About Us</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../faq/index.html"
+                      >FAQ Page</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../contact/index.html"
+                      >Contact Us</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="../contact/index.html"
+                  >CONTACT</a
+                >
+              </li>
+            </ul>
+            <div class="nav-icon fs-5">
+              <a
+                class="text-dark"
+                href="../search/index.html"
+                aria-label="Search"
+                ><i class="fa-solid fa-magnifying-glass"></i
+              ></a>
+              <a class="text-dark" href="" aria-label="Account"
+                ><i class="fa-regular fa-user"></i
+              ></a>
+              <a
+                class="text-dark position-relative"
+                href=""
+                aria-label="Wishlist"
+              >
+                <i class="fa-regular fa-heart"></i>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                  style="font-size: 0.6rem"
+                  >5</span
+                >
+              </a>
+              <a class="text-dark position-relative" href="" aria-label="Cart">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                  style="font-size: 0.6rem"
+                  >2</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <!-- SEARCH HERO -->
+    <div class="search-hero text-center px-3">
+      <p class="section-label mb-2" style="color: rgba(255, 255, 255, 0.6)">
+        AROME STORE
+      </p>
+      <h1 class="mb-2">What are you looking for?</h1>
+      <p class="mb-4">Search our full collection of fragrances, gifts & more</p>
+
+      <div class="search-bar-wrapper">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search perfumes, brands, categories…"
+          autocomplete="off"
+        />
+        <button onclick="runSearch()" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- Quick filter tags -->
+      <div class="filter-tags mt-4">
+        <a href="#" class="filter-tag" onclick="quickSearch('Eau de Parfum')"
+          >Eau de Parfum</a
+        >
+        <a href="#" class="filter-tag" onclick="quickSearch('Women')">Women</a>
+        <a href="#" class="filter-tag" onclick="quickSearch('Men')">Men</a>
+        <a href="#" class="filter-tag" onclick="quickSearch('New Arrivals')"
+          >New Arrivals</a
+        >
+        <a href="#" class="filter-tag" onclick="quickSearch('Best Sellers')"
+          >Best Sellers</a
+        >
+        <a href="#" class="filter-tag" onclick="quickSearch('Gift Sets')"
+          >Gift Sets</a
+        >
+      </div>
+    </div>
+
+    <!-- RESULTS SECTION -->
+    <section class="results-section">
+      <div class="container">
+        <!-- No results state -->
+        <div class="no-results" id="noResults">
+          <i class="fa-regular fa-face-sad-tear"></i>
+          <h4>No results found</h4>
+          <p>Try a different keyword or browse our popular picks below.</p>
+        </div>
+
+        <!-- Results grid -->
+        <div id="resultsGrid">
+          <p class="results-count" id="resultsCount"></p>
+          <div class="row g-4" id="resultsContainer"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POPULAR PICKS (shown before search) -->
+    <section class="popular-section" id="popularSection">
+      <div class="container">
+        <p class="section-label mb-1">TRENDING NOW</p>
+        <h3
+          class="fw-bold mb-4"
+          style="font-family: &quot;Playfair&quot;, serif"
+        >
+          Popular Picks
+        </h3>
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="product-card">
+              <img src="../image/per5.png" alt="Klein Women Spray" />
+              <div class="card-body">
+                <div class="stars">★★★★★</div>
+                <p class="card-title mt-1">Klein Women Spray</p>
+                <span class="price">$30.00</span
+                ><span class="price-old">$60.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="product-card">
+              <img src="/image/per10" alt="Men Caramel Dream" />
+              <div class="card-body">
+                <div class="stars">★★★★★</div>
+                <p class="card-title mt-1">Men Caramel Dream</p>
+                <span class="price">$50.00</span
+                ><span class="price-old">$70.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="product-card">
+              <img src="/image/per12" alt="Black Wild Fragrance" />
+              <div class="card-body">
+                <div class="stars">★★★★☆</div>
+                <p class="card-title mt-1">Black Wild Fragrance</p>
+                <span class="price">$99.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="product-card">
+              <img src="../image/per4.png" alt="Arome Virtual Flower" />
+              <div class="card-body">
+                <div class="stars">★★★★★</div>
+                <p class="card-title mt-1">Arome Virtual Flower</p>
+                <span class="price">$200.00</span
+                ><span class="price-old">$300.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-arome text-white">
+      <div class="container-fluid px-3 px-md-4 px-lg-5">
+        <div class="row g-4 py-5">
+          <!-- Brand -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <img
+              src="/image/imagee3.avif"
+              alt="Arome"
+              style="width: 110px; height: auto"
+            />
+            <p class="mt-3 footer-desc">
+              Arome® was founded on the belief that wellness is more than just a
+              necessity — it's a powerful expression of self-care and vitality.
+            </p>
+            <ul class="d-flex list-unstyled gap-2 mt-3 flex-wrap">
+              <li>
+                <a class="foot-icon" href="" aria-label="Twitter"
+                  ><i class="fa-brands fa-x-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a class="foot-icon" href="" aria-label="Instagram"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a class="foot-icon" href="" aria-label="Facebook"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li>
+                <a class="foot-icon" href="" aria-label="Pinterest"
+                  ><i class="fa-brands fa-pinterest-p"></i
+                ></a>
+              </li>
+              <li>
+                <a class="foot-icon" href="" aria-label="Snapchat"
+                  ><i class="fa-brands fa-snapchat"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Useful Links -->
+          <div class="col-6 col-md-3 col-lg-2 offset-lg-1">
+            <h6 class="footer-heading">Useful Links</h6>
+            <ul class="list-unstyled footer-links mt-3">
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Shopping Cart</a></li>
+              <li><a href="#">My Wishlist</a></li>
+              <li><a href="#">Our Store Info</a></li>
+            </ul>
+          </div>
+
+          <!-- Information -->
+          <div class="col-6 col-md-3 col-lg-2">
+            <h6 class="footer-heading">Information</h6>
+            <ul class="list-unstyled footer-links mt-3">
+              <li><a href="#">Order Tracking</a></li>
+              <li><a href="#">Wishlist</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-12 col-md-6 col-lg-3 offset-lg-1">
+            <h6 class="footer-heading">Newsletter</h6>
+            <p class="footer-desc mt-2">
+              Subscribe to receive news and updates.
+            </p>
+            <form class="footer-newsletter mt-3" onsubmit="return false;">
+              <div class="footer-newsletter-inner">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  aria-label="Email for newsletter"
+                />
+                <button type="submit" aria-label="Subscribe">
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer-bottom">
+          <p class="mb-0">© 2026 Arome®. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // Product catalogue — extend this list as your store grows
+      const products = [
+        {
+          name: "Klein Women Spray",
+          price: "$30.00",
+          old: "$60.00",
+          stars: "★★★★★",
+          img: "/image/per11",
+          tags: ["women", "spray", "eau de parfum"],
+        },
+        {
+          name: "Men Caramel Dream",
+          price: "$50.00",
+          old: "$70.00",
+          stars: "★★★★★",
+          img: "/image/per9",
+          tags: ["men", "caramel", "dream"],
+        },
+        {
+          name: "Black Wild Fragrance",
+          price: "$99.00",
+          old: "",
+          stars: "★★★★☆",
+          img: "/image/per10",
+          tags: ["men", "wild", "black", "unisex"],
+        },
+        {
+          name: "Arome Virtual Flower",
+          price: "$200.00",
+          old: "$300.00",
+          stars: "★★★★★",
+          img: "/image/per8",
+          tags: ["women", "flower", "gift sets"],
+        },
+        {
+          name: "Aersace",
+          price: "$50.99",
+          old: "",
+          stars: "★★★★★",
+          img: "/image/per14",
+          tags: ["men", "unisex", "best sellers"],
+        },
+        {
+          name: "Signature Oud",
+          price: "$120.00",
+          old: "",
+          stars: "★★★★☆",
+          img: "/image/per15",
+          tags: ["men", "oud", "best sellers"],
+        },
+        {
+          name: "Travel Size Collection",
+          price: "$25.00",
+          old: "$35.00",
+          stars: "★★★★★",
+          img: "/image/per7",
+          tags: ["travel", "gift sets", "new arrivals"],
+        },
+      ];
+
+      const searchInput = document.getElementById("searchInput");
+      const resultsGrid = document.getElementById("resultsGrid");
+      const resultsCount = document.getElementById("resultsCount");
+      const resultsContainer = document.getElementById("resultsContainer");
+      const noResults = document.getElementById("noResults");
+      const popularSection = document.getElementById("popularSection");
+
+      // Run search on Enter key
+      searchInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") runSearch();
+      });
+
+      // Run search on input (live)
+      searchInput.addEventListener("input", () => {
+        if (searchInput.value.trim().length > 1) runSearch();
+        else resetView();
+      });
+
+      function quickSearch(term) {
+        searchInput.value = term;
+        runSearch();
+        searchInput.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      function runSearch() {
+        const query = searchInput.value.trim().toLowerCase();
+        if (!query) {
+          resetView();
+          return;
+        }
+
+        const filtered = products.filter(
+          (p) =>
+            p.name.toLowerCase().includes(query) ||
+            p.tags.some((t) => t.includes(query)),
+        );
+
+        popularSection.style.display = "none";
+
+        if (filtered.length === 0) {
+          resultsGrid.style.display = "none";
+          noResults.style.display = "block";
+          return;
+        }
+
+        noResults.style.display = "none";
+        resultsGrid.style.display = "block";
+        resultsCount.textContent = `${filtered.length} result${filtered.length > 1 ? "s" : ""} for "${searchInput.value.trim()}"`;
+
+        resultsContainer.innerHTML = filtered
+          .map(
+            (p) => `
         <div class="col-12 col-md-6 col-lg-3">
           <div class="product-card">
             <img src="${p.img}" alt="${p.name}">
@@ -486,22 +704,35 @@
               <div class="stars">${p.stars}</div>
               <p class="card-title mt-1">${p.name}</p>
               <span class="price">${p.price}</span>
-              ${p.old ? `<span class="price-old">${p.old}</span>` : ''}
+              ${p.old ? `<span class="price-old">${p.old}</span>` : ""}
             </div>
           </div>
         </div>
-      `).join('');
-    }
+      `,
+          )
+          .join("");
+      }
 
-    function resetView() {
-      resultsGrid.style.display = 'none';
-      noResults.style.display = 'none';
-      popularSection.style.display = 'block';
-    }
+      function resetView() {
+        resultsGrid.style.display = "none";
+        noResults.style.display = "none";
+        popularSection.style.display = "block";
+      }
 
-    // Auto-focus the search input on page load
-    window.addEventListener('load', () => searchInput.focus());
+      // Auto-focus the search input on page load
+      window.addEventListener("load", () => searchInput.focus());
+    </script>
+  
+  <!-- Scroll to Top -->
+  <button id="scrollTop" aria-label="Scroll to top"></button>
+  <script>
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('visible', window.scrollY > 300);
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
-
 </body>
 </html>

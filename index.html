@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-  <base href="/Arome-Perfume/">
-  <meta charset="UTF-8" />
+<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Perfume</title>
   <link rel="icon" type="image/png" href="image/perfume111.png" />
@@ -97,30 +96,30 @@
             </li>
 
             <li>
-              <a class="nav-link fw-bold" href="/blog/index.html">BLOG</a>
+              <a class="nav-link fw-bold" href="blog/index.html">BLOG</a>
             </li>
 
 
             <li class="nav-item dropdown hover-open">
-              <a class="nav-link dropdown-toggle fw-bold" href="/about/index.html" role="button" data-bs-toggle="dropdown">
+              <a class="nav-link dropdown-toggle fw-bold" href="about/index.html" role="button" data-bs-toggle="dropdown">
                 PAGES
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/about/index.html">About Us</a></li>
-                <li><a class="dropdown-item" href="/faq/index.html">FAQ Page</a></li>
-                <li><a class="dropdown-item" href="/contact/index.html">Contact Us</a></li>
+                <li><a class="dropdown-item" href="about/index.html">About Us</a></li>
+                <li><a class="dropdown-item" href="faq/index.html">FAQ Page</a></li>
+                <li><a class="dropdown-item" href="contact/index.html">Contact Us</a></li>
                 <li><a class="dropdown-item" href="../page-Wishlist/index.html">Wishlist Page</a></li>
                 <li><a class="dropdown-item" href="../page-Terms/index.html">Terms & condition</a></li>
               </ul>
             </li>
             <li>
-              <a class="nav-link fw-bold" href="/contact/index.html">CONTACT</a>
+              <a class="nav-link fw-bold" href="contact/index.html">CONTACT</a>
             </li>
           </ul>
 
           <div class="nav-icon fs-5">
 
-            <a class="text-dark" href="/search/index.html">
+            <a class="text-dark" href="search/index.html">
               <i class="fa-solid fa-magnifying-glass"></i>
             </a>
 
@@ -280,7 +279,7 @@
 
       <!-- card-section2 -->
 
-      <section class="container">
+      <section class="container-fluid">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mt-5">
           <div class="col">
             <div class="card h-100">
@@ -325,6 +324,7 @@
             </div>
           </div>
         </div>
+      </section>
 
       <!-- section 50%OFF -->
 
@@ -430,7 +430,7 @@
         </div>
       </section>
 
-      <section class="logo-sec">
+      <section class=" logo-sec">
         <div class="logo-marquee-wrapper">
           <div class="logo-marquee-track">
             <!-- original set -->
@@ -602,6 +602,18 @@
       AOS.init();
     </script>
 
+
+  <!-- Scroll to Top -->
+  <button id="scrollTop" aria-label="Scroll to top"></button>
+  <script>
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('visible', window.scrollY > 300);
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 
 </html>

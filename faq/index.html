@@ -1,480 +1,744 @@
 ﻿<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ</title>
+    <link rel="icon" type="image/png" href="../image/perfume111.png" />
+    <link rel="stylesheet" href="../style.css" />
+    <!-- bootstrap cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
 
-<head>
-  <base href="/Arome-Perfume/">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ</title>
-  <link rel="icon" type="image/png" href="image/perfume111.png" />
-  <link rel="stylesheet" href="style.css"/>
-  <!-- bootstrap cdn -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <!-- bootstrap icon cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
 
-  <!-- bootstrap icon cdn -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- font-family -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- aos cdn -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400..800&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  <!-- fontawesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- font-family -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <!-- aos cdn -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <!-- google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400..800&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
-    rel="stylesheet">
-</head>
-
-<body>
-<section class="">
-    <nav class="navbar navbar-expand-lg sticky-top">
-
-      <div class="container-fluid" data-aos="fade-down">
-        <!-- brand-name -->
-        <div>
-          <img src="image/arome-logo.jpg" alt="" width="150px">
-        </div>
-
-
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item"><a class="nav-link fw-bold" href="index.html">HOME</a></li>
-
-
-            <!-- Shop -->
-
-            <li class="nav-item dropdown mega-dropdown-custom hover-open">
-              <a class="nav-link dropdown-toggle px-3 fw-bold" href="#" data-bs-toggle="dropdown">
-                SHOP
-              </a>
-
-              <div class="dropdown-menu mega-menu-custom p-5  shadow-lg border-0 px-5">
-
-                <div class="row">
-                  <div class="col-lg-3">
-                    <h5 class="fw-bold mb-3 menu-title">Categories</h5>
-                    <a href="#" class="dropdown-item menu-item">Eau de Parfum</a>
-                    <a href="#" class="dropdown-item menu-item">Eau de Toilette</a>
-                    <a href="#" class="dropdown-item menu-item">Body Mists</a>
-                    <a href="#" class="dropdown-item menu-item">Travel Sizes</a>
-                  </div>
-
-                  <div class="col-lg-3">
-                    <h5 class="fw-bold mb-3 menu-title">All Perfumes</h5>
-                    <a href="#" class="dropdown-item menu-item">Men’s Fragrances</a>
-                    <a href="#" class="dropdown-item menu-item">Women’s Fragrances</a>
-                    <a href="#" class="dropdown-item menu-item">Unisex Perfumes</a>
-                    <a href="#" class="dropdown-item menu-item">New Arrivals</a>
-                  </div>
-
-                  <div class="col-lg-3">
-                    <h5 class="fw-bold mb-3 menu-title">Offers & Discounts</h5>
-                    <a href="#" class="dropdown-item menu-item">Limited Editions</a>
-                    <a href="#" class="dropdown-item menu-item">Best Sellers</a>
-                    <a href="#" class="dropdown-item menu-item">Seasonal Sales</a>
-                    <a href="#" class="dropdown-item menu-item">Clearance Sell</a>
-                  </div>
-
-                  <div class="col-md-3">
-                    <img src="image/imageperf" class="img-fluid rounded" alt="">
-                    <p class="text-center mt-2 fw-semibold">Up to 50% Off</p>
-                  </div>
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <a class="nav-link fw-bold" href="/blog/index.html">BLOG</a>
-            </li>
-
-
-            <li class="nav-item dropdown hover-open">
-              <a class="nav-link dropdown-toggle fw-bold" href="/about/index.html" role="button" data-bs-toggle="dropdown">
-                PAGES
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/about/index.html">About Us</a></li>
-                <li><a class="dropdown-item" href="/faq/index.html">FAQ Page</a></li>
-                <li><a class="dropdown-item" href="/contact/index.html">Contact Us</a></li>
-                <li><a class="dropdown-item" href="../page-Wishlist/index.html">Wishlist Page</a></li>
-                <li><a class="dropdown-item" href="../page-Terms/index.html">Terms & condition</a></li>
-              </ul>
-            </li>
-            <li>
-              <a class="nav-link fw-bold" href="/contact/index.html">CONTACT</a>
-            </li>
-          </ul>
-
-          <div class="nav-icon fs-5">
-
-            <a class="text-dark" href="/search/index.html">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
-
-            <a class="text-dark " href="">
-              <i class="fa-regular fa-user"></i></a>
-
-            <a class="text-dark" href="">
-              <div class=" position-relative">
-                <i class="fa-regular fa-heart"></i>
-
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                  5
-                  <span class="visually-hidden">unread messages</span>
-                </span>
-              </div>
-            </a>
-
-            <a class="text-dark" href="">
-              <div class=" position-relative">
-                <i class="fa-solid fa-basket-shopping"></i>
-
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                  2
-                  <span class="visually-hidden">unread messages</span>
-                </span>
-              </div>
-            </a>
+  <body>
+    <section class="">
+      <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid" data-aos="fade-down">
+          <!-- brand-name -->
+          <div>
+            <img src="../image/arome-logo.jpg" alt="" width="150px" />
           </div>
-        </div>
-      </div>
-    </nav>
-  </section>
 
-  <div class="home-container-faq">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a class="text-black text-decoration-none" href="index.html">HOME</a></li>
-        <li class=" text-black breadcrumb-item active" aria-current="page">Faq</li>
-      </ol>
-    </nav>
-  </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="../index.html">HOME</a>
+              </li>
 
+              <!-- Shop -->
 
-  <section class="mb-5">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 col-lg-7" data-aos="fade-right">
-          <div class="position-relative h-100">
-            <img src="image/per6.png" class="h-100" alt="" width="100%">
-
-            <div class="questions d-flex position-absolute  start-50 translate-middle w-75 shadow-lg">
-              <div>
-              <h4 class="mx-3">Still Have Questions?</h4>
-              <p class="mx-3">feel free to ask any questions <br> you have!</p>
-              </div>
-              <div class="mx-4">
-                <a href="#" class="btn bg-purple text-white mt-4 px-3  fw-semibold">
-                  HERE TO HELP
+              <li class="nav-item dropdown mega-dropdown-custom hover-open">
+                <a
+                  class="nav-link dropdown-toggle px-3 fw-bold"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                >
+                  SHOP
                 </a>
-              </div>
+
+                <div
+                  class="dropdown-menu mega-menu-custom p-5 shadow-lg border-0 px-5"
+                >
+                  <div class="row">
+                    <div class="col-lg-3">
+                      <h5 class="fw-bold mb-3 menu-title">Categories</h5>
+                      <a href="#" class="dropdown-item menu-item"
+                        >Eau de Parfum</a
+                      >
+                      <a href="#" class="dropdown-item menu-item"
+                        >Eau de Toilette</a
+                      >
+                      <a href="#" class="dropdown-item menu-item">Body Mists</a>
+                      <a href="#" class="dropdown-item menu-item"
+                        >Travel Sizes</a
+                      >
+                    </div>
+
+                    <div class="col-lg-3">
+                      <h5 class="fw-bold mb-3 menu-title">All Perfumes</h5>
+                      <a href="#" class="dropdown-item menu-item"
+                        >Men’s Fragrances</a
+                      >
+                      <a href="#" class="dropdown-item menu-item"
+                        >Women’s Fragrances</a
+                      >
+                      <a href="#" class="dropdown-item menu-item"
+                        >Unisex Perfumes</a
+                      >
+                      <a href="#" class="dropdown-item menu-item"
+                        >New Arrivals</a
+                      >
+                    </div>
+
+                    <div class="col-lg-3">
+                      <h5 class="fw-bold mb-3 menu-title">
+                        Offers & Discounts
+                      </h5>
+                      <a href="#" class="dropdown-item menu-item"
+                        >Limited Editions</a
+                      >
+                      <a href="#" class="dropdown-item menu-item"
+                        >Best Sellers</a
+                      >
+                      <a href="#" class="dropdown-item menu-item"
+                        >Seasonal Sales</a
+                      >
+                      <a href="#" class="dropdown-item menu-item"
+                        >Clearance Sell</a
+                      >
+                    </div>
+
+                    <div class="col-md-3">
+                      <img
+                        src="../image/imageperf"
+                        class="img-fluid rounded"
+                        alt=""
+                      />
+                      <p class="text-center mt-2 fw-semibold">Up to 50% Off</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <a class="nav-link fw-bold" href="../blog/index.html">BLOG</a>
+              </li>
+
+              <li class="nav-item dropdown hover-open">
+                <a
+                  class="nav-link dropdown-toggle fw-bold"
+                  href="../about/index.html"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  PAGES
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="../about/index.html"
+                      >About Us</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../faq/index.html"
+                      >FAQ Page</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../contact/index.html"
+                      >Contact Us</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../page-Wishlist/index.html"
+                      >Wishlist Page</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="../page-Terms/index.html"
+                      >Terms & condition</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="nav-link fw-bold" href="../contact/index.html"
+                  >CONTACT</a
+                >
+              </li>
+            </ul>
+
+            <div class="nav-icon fs-5">
+              <a class="text-dark" href="../search/index.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </a>
+
+              <a class="text-dark" href="">
+                <i class="fa-regular fa-user"></i
+              ></a>
+
+              <a class="text-dark" href="">
+                <div class="position-relative">
+                  <i class="fa-regular fa-heart"></i>
+
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                  >
+                    5
+                    <span class="visually-hidden">unread messages</span>
+                  </span>
+                </div>
+              </a>
+
+              <a class="text-dark" href="">
+                <div class="position-relative">
+                  <i class="fa-solid fa-basket-shopping"></i>
+
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                  >
+                    2
+                    <span class="visually-hidden">unread messages</span>
+                  </span>
+                </div>
+              </a>
             </div>
           </div>
         </div>
+      </nav>
+    </section>
 
-
-        <div class="col-12 col-lg-5 mt-4 mt-lg-0 ">
-          <p class="mx-3">GENERAL QUESTIONS HERE</p>
-          <h4 class="mt-3 mx-3">Some Frequently Asked Questions?</h4>
-          <div class="accordion accordion-flush mt-4" id="accordionFlushExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                  How do i choose the right Vitamins for me?
-                </button>
-              </h2>
-              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <h6 class="">We recommend consulting a healthcare professional to determine which
-                  vitamins or supplements best fit your needs.
-
-                </h6>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                  Are you Perfume certified and safe to use?
-                </button>
-              </h2>
-              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <h6 class="accordion-body">
-                  Yes, all our vitamins arelab-tested, FDA-compliant, and sourced from trusted
-                  manufacturersto ensure safety and quality.
-                </h6>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                  How long does it take to see results from perfume?
-                </button>
-              </h2>
-              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <h6 class="accordion-body">Results vary based on individual metabolism and
-                  consistency. Most users see noticeable improvements within4-6 weeksof daily use.
-
-                </h6>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                  Do you offer subscription plans forperfume?
-                </button>
-              </h2>
-              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                <h6 class="accordion-body">Yes! We offer flexible subscription plans so you never
-                  run out of your essential vitamins. Subscribe and save 10%on every order!
-
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="home-container-faq">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a class="text-black text-decoration-none" href="../index.html"
+              >HOME</a
+            >
+          </li>
+          <li class="text-black breadcrumb-item active" aria-current="page">
+            Faq
+          </li>
+        </ol>
+      </nav>
     </div>
-  </section>
 
-  <section>
-    <div class="trusted-section container-fluid">
-      <div class="trust">
-        <h2 class="fw-bold">Trusted by Thousands of<br>
-          Satisfied Customers.</h2>
+    <section class="mb-5">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-lg-7" data-aos="fade-right">
+            <div class="position-relative h-100">
+              <img src="../image/per6.png" class="h-100" alt="" width="100%" />
+
+              <div
+                class="questions d-flex position-absolute start-50 translate-middle w-75 shadow-lg"
+              >
+                <div>
+                  <h4 class="mx-3">Still Have Questions?</h4>
+                  <p class="mx-3">
+                    feel free to ask any questions <br />
+                    you have!
+                  </p>
+                </div>
+                <div class="mx-4">
+                  <a
+                    href="#"
+                    class="btn bg-purple text-white mt-4 px-3 fw-semibold"
+                  >
+                    HERE TO HELP
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-5 mt-4 mt-lg-0">
+            <p class="mx-3">GENERAL QUESTIONS HERE</p>
+            <h4 class="mt-3 mx-3">Some Frequently Asked Questions?</h4>
+            <div
+              class="accordion accordion-flush mt-4"
+              id="accordionFlushExample"
+            >
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed fw-bold fs-5"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne"
+                  >
+                    How do i choose the right Vitamins for me?
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <h6 class="">
+                    We recommend consulting a healthcare professional to
+                    determine which vitamins or supplements best fit your needs.
+                  </h6>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed fw-bold fs-5"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseTwo"
+                  >
+                    Are you Perfume certified and safe to use?
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseTwo"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <h6 class="accordion-body">
+                    Yes, all our vitamins arelab-tested, FDA-compliant, and
+                    sourced from trusted manufacturersto ensure safety and
+                    quality.
+                  </h6>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed fw-bold fs-5"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseThree"
+                  >
+                    How long does it take to see results from perfume?
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseThree"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <h6 class="accordion-body">
+                    Results vary based on individual metabolism and consistency.
+                    Most users see noticeable improvements within4-6 weeksof
+                    daily use.
+                  </h6>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed fw-bold fs-5"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseThree"
+                  >
+                    Do you offer subscription plans forperfume?
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseThree"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <h6 class="accordion-body">
+                    Yes! We offer flexible subscription plans so you never run
+                    out of your essential vitamins. Subscribe and save 10%on
+                    every order!
+                  </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- trusted card -->
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 trusted-card">
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <p class="card-title arome-sans-serif mt-5">"Arome Supplement have been a game-changer for
-                me! I feel more energized and
-                healthier than ever.Highly Recomend!"</p>
-              <div class="star mt-3 fs-3">
-                ★★★★★
-              </div>
-            </div>
-          </div>
-          <div class="d-flex mt-2 mx-3">
-            <img src=" /image/team6.webp" class="Satisfied-customer" width="50px">
-            <div>
-              <h5 class="card-title fw-bold mt-2 ">Megan Steele</h5>
-              <p><span><img src="image/veri1.jpg" alt="" width="20px"></span>verified Buyer</p>
-            </div>
-          </div>
+    <section>
+      <div class="trusted-section container-fluid">
+        <div class="trust">
+          <h2 class="fw-bold">
+            Trusted by Thousands of<br />
+            Satisfied Customers.
+          </h2>
         </div>
 
-
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <p class="card-title arome-sans-serif mt-5">"Arome Supplement have been a game-changer for
-                me! I feel more energized and
-                healthier than ever.Highly Recomend!"</p>
-              <div class="star mt-3 fs-3">
-                ★★★★★
+        <!-- trusted card -->
+        <div
+          class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 trusted-card"
+        >
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <p class="card-title arome-sans-serif mt-5">
+                  "Arome Supplement have been a game-changer for me! I feel more
+                  energized and healthier than ever.Highly Recomend!"
+                </p>
+                <div class="star mt-3 fs-3">★★★★★</div>
               </div>
             </div>
-          </div>
-          <div class="d-flex mt-2 mx-3">
-            <img src="image/team4.webp" class="Satisfied-customer" width="50px">
-            <div>
-              <h5 class="card-title fw-bold">Karen Summers</h5>
-              <p><span><img src="image/veri1.jpg" alt="" width="20px"></span>verified Buyer</p>
-            </div>
-          </div>
-        </div>
-        <div class="col ">
-          <div class="card">
-
-            <div class="card-body">
-              <p class="card-title arome-sans-serif mt-5">"Excellent service and top-notch supplements.The
-                Loyalty Rewards is a great
-                bonus.Will definetely
-                keep
-                ordering!"</p>
-              <div class="star mt-4 fs-3">
-                ★★★★★
-              </div>
-            </div>
-          </div>
-          <div class="d-flex mt-2 mx-3">
-            <img src="image/team3.webp" class="Satisfied-customer" width="50px">
-            <div>
-              <h5 class="card-title fw-bold ">Darrel Austin</h5>
-              <p><span><img src="image/veri1.jpg" alt="" width="20px"></span>verified Buyer</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Second Frequently Asked Section -->
-  <section class="py-5 mt-4">
-    <div class="container-fluid">
-      <div class="row align-items-center">
-
-        <!-- Accordion Column -->
-        <div class="col-lg-6 px-4 px-lg-5">
-          <p class="text-muted fw-semibold mb-1">GENERAL QUESTIONS HERE</p>
-          <h4 class="mt-2 mb-4 fw-bold">Some Frequently Asked Questions?</h4>
-          <div class="accordion accordion-flush" id="accordionFlushExample2">
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush2-collapseOne" aria-expanded="false" aria-controls="flush2-collapseOne">
-                  How do I choose the right perfume for me?
-                </button>
-              </h2>
-              <div id="flush2-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample2">
-                <div class="accordion-body">
-                  We recommend consulting a healthcare professional to determine which
-                  vitamins or supplements best fit your needs.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush2-collapseTwo" aria-expanded="false" aria-controls="flush2-collapseTwo">
-                  Are your perfumes certified and safe to use?
-                </button>
-              </h2>
-              <div id="flush2-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample2">
-                <div class="accordion-body">
-                  Yes, all our perfumes are lab-tested, FDA-compliant, and sourced from trusted
-                  manufacturers to ensure safety and quality.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush2-collapseThree" aria-expanded="false" aria-controls="flush2-collapseThree">
-                  How long does a perfume bottle last?
-                </button>
-              </h2>
-              <div id="flush2-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample2">
-                <div class="accordion-body">
-                  Results vary based on individual usage. Most users see their bottle last
-                  between 4–6 weeks with daily use.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush2-collapseFour" aria-expanded="false" aria-controls="flush2-collapseFour">
-                  Do you offer subscription plans for perfume?
-                </button>
-              </h2>
-              <div id="flush2-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample2">
-                <div class="accordion-body">
-                  Yes! We offer flexible subscription plans so you never run out of your
-                  favourite fragrance. Subscribe and save 10% on every order!
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Image Column -->
-        <div class="col-lg-6 mt-5 mt-lg-0">
-          <div class="position-relative">
-            <img src="image/per111.webp" class="w-100 rounded" alt="Still have questions?" style="max-height: 500px; object-fit: cover;">
-            <div class="questions d-flex align-items-center position-absolute start-50 translate-middle w-75 shadow-lg px-3 py-3">
+            <div class="d-flex mt-2 mx-3">
+              <img
+                src=" /image/team6.webp"
+                class="Satisfied-customer"
+                width="50px"
+              />
               <div>
-                <h5 class="mx-3 mb-1">Still Have Questions?</h5>
-                <p class="mx-3 mb-0">Feel free to ask any questions you have!</p>
+                <h5 class="card-title fw-bold mt-2">Megan Steele</h5>
+                <p>
+                  <span
+                    ><img src="../image/veri1.jpg" alt="" width="20px" /></span
+                  >verified Buyer
+                </p>
               </div>
-              <div class="ms-auto me-2 flex-shrink-0">
-                <a href="#" class="btn bg-purple text-white fw-semibold px-3">HERE TO HELP</a>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <p class="card-title arome-sans-serif mt-5">
+                  "Arome Supplement have been a game-changer for me! I feel more
+                  energized and healthier than ever.Highly Recomend!"
+                </p>
+                <div class="star mt-3 fs-3">★★★★★</div>
+              </div>
+            </div>
+            <div class="d-flex mt-2 mx-3">
+              <img
+                src="../image/team4.webp"
+                class="Satisfied-customer"
+                width="50px"
+              />
+              <div>
+                <h5 class="card-title fw-bold">Karen Summers</h5>
+                <p>
+                  <span
+                    ><img src="../image/veri1.jpg" alt="" width="20px" /></span
+                  >verified Buyer
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <p class="card-title arome-sans-serif mt-5">
+                  "Excellent service and top-notch supplements.The Loyalty
+                  Rewards is a great bonus.Will definetely keep ordering!"
+                </p>
+                <div class="star mt-4 fs-3">★★★★★</div>
+              </div>
+            </div>
+            <div class="d-flex mt-2 mx-3">
+              <img
+                src="../image/team3.webp"
+                class="Satisfied-customer"
+                width="50px"
+              />
+              <div>
+                <h5 class="card-title fw-bold">Darrel Austin</h5>
+                <p>
+                  <span
+                    ><img src="../image/veri1.jpg" alt="" width="20px" /></span
+                  >verified Buyer
+                </p>
               </div>
             </div>
           </div>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="footer-arome mt-5 text-white">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="foot-all col-12 col-md-6 col-lg-3 mt-4">
-          <div class="brand-name">
-            <img src="image/imagee3.avif" class="" width="120px">
+    <!-- Second Frequently Asked Section -->
+    <section class="py-5 mt-4">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <!-- Accordion Column -->
+          <div class="col-lg-6 px-4 px-lg-5">
+            <p class="text-muted fw-semibold mb-1">GENERAL QUESTIONS HERE</p>
+            <h4 class="mt-2 mb-4 fw-bold">Some Frequently Asked Questions?</h4>
+            <div class="accordion accordion-flush" id="accordionFlushExample2">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed fw-bold fs-5"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush2-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush2-collapseOne"
+                  >
+                    How do I choose the right perfume for me?
+                  </button>
+                </h2>
+                <div
+                  id="flush2-collapseOne"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushExample2"
+                >
+                  <div class="accordion-body">
+                    We recommend consulting a healthcare professional to
+                    determine which vitamins or supplements best fit your needs.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed fw-bold fs-5"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush2-collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="flush2-collapseTwo"
+                  >
+                    Are your perfumes certified and safe to use?
+                  </button>
+                </h2>
+                <div
+                  id="flush2-collapseTwo"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushExample2"
+                >
+                  <div class="accordion-body">
+                    Yes, all our perfumes are lab-tested, FDA-compliant, and
+                    sourced from trusted manufacturers to ensure safety and
+                    quality.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed fw-bold fs-5"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush2-collapseThree"
+                    aria-expanded="false"
+                    aria-controls="flush2-collapseThree"
+                  >
+                    How long does a perfume bottle last?
+                  </button>
+                </h2>
+                <div
+                  id="flush2-collapseThree"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushExample2"
+                >
+                  <div class="accordion-body">
+                    Results vary based on individual usage. Most users see their
+                    bottle last between 4–6 weeks with daily use.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed fw-bold fs-5"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush2-collapseFour"
+                    aria-expanded="false"
+                    aria-controls="flush2-collapseFour"
+                  >
+                    Do you offer subscription plans for perfume?
+                  </button>
+                </h2>
+                <div
+                  id="flush2-collapseFour"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionFlushExample2"
+                >
+                  <div class="accordion-body">
+                    Yes! We offer flexible subscription plans so you never run
+                    out of your favourite fragrance. Subscribe and save 10% on
+                    every order!
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <p class="mt-3">
-            Arome® was founded on the belief that wellness is more than just a <br> necessity—it's a powerful
-            expression of self-care and vitality.
-          </p>
-          <div class="mt-3">
-            <ul class="d-flex fs-4 list-unstyled gap-2">
-              <li><a class="text-decoration-none" href=""><i class="fa-brands fa-x-twitter foot-icon"></i></a></li>
-              <li><a class="text-decoration-none" href=""><i class="fa-brands fa-instagram foot-icon"></i></a></li>
-              <li><a class="text-decoration-none" href=""><i class="fa-brands fa-facebook-f foot-icon"></i></a></li>
-              <li><a class="text-decoration-none" href=""><i class="fa-brands fa-pinterest-p foot-icon"></i></a></li>
-              <li><a class="text-decoration-none" href=""><i class="fa-brands fa-snapchat foot-icon"></i></a></li>
+
+          <!-- Image Column -->
+          <div class="col-lg-6 mt-5 mt-lg-0">
+            <div class="position-relative">
+              <img
+                src="../image/per111.webp"
+                class="w-100 rounded"
+                alt="Still have questions?"
+                style="max-height: 500px; object-fit: cover"
+              />
+              <div
+                class="questions d-flex align-items-center position-absolute start-50 translate-middle w-75 shadow-lg px-3 py-3"
+              >
+                <div>
+                  <h5 class="mx-3 mb-1">Still Have Questions?</h5>
+                  <p class="mx-3 mb-0">
+                    Feel free to ask any questions you have!
+                  </p>
+                </div>
+                <div class="ms-auto me-2 flex-shrink-0">
+                  <a href="#" class="btn bg-purple text-white fw-semibold px-3"
+                    >HERE TO HELP</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-arome text-white">
+      <div class="container-fluid px-3 px-md-4 px-lg-5">
+        <div class="row g-4 py-5">
+          <!-- Brand -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <img
+              src="/image/imagee3.avif"
+              alt="Arome"
+              style="width: 110px; height: auto"
+            />
+            <p class="mt-3 footer-desc">
+              Arome® was founded on the belief that wellness is more than just a
+              necessity — it's a powerful expression of self-care and vitality.
+            </p>
+            <ul class="d-flex list-unstyled gap-2 mt-3 flex-wrap">
+              <li>
+                <a class="foot-icon" href="" aria-label="Twitter"
+                  ><i class="fa-brands fa-x-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a class="foot-icon" href="" aria-label="Instagram"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a class="foot-icon" href="" aria-label="Facebook"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li>
+                <a class="foot-icon" href="" aria-label="Pinterest"
+                  ><i class="fa-brands fa-pinterest-p"></i
+                ></a>
+              </li>
+              <li>
+                <a class="foot-icon" href="" aria-label="Snapchat"
+                  ><i class="fa-brands fa-snapchat"></i
+                ></a>
+              </li>
             </ul>
           </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 mt-4">
-          <h4 class="fw-bold Playfair">Useful Links</h4>
-          <ul class="list-unstyled">
-            <li class="mt-2"><a class="useful-link intel" href="#">My Account</a></li>
-            <li class="mt-2"><a class="useful-link intel mt-3" href="#">Shopping Cart</a></li>
-            <li class="mt-2"><a class="useful-link intel mt-3" href="#">My Wishlist</a></li>
-            <li class="mt-2"><a class="useful-link intel mt-3" href="#">Our Store Info</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3">
-          <h4 class="fw-bold mt-4 Playfair">Information</h4>
-          <ul class="list-unstyled">
-            <li class="mt-2"><a href="#" class="useful-link intel mt-3">Order Tracking</a></li>
-            <li class="mt-2"><a href="#" class="useful-link intel mt-3">Wishlist</a></li>
-            <li class="mt-2"><a href="#" class="useful-link intel mt-3">Privacy Policy</a></li>
-            <li class="mt-2"><a href="#" class="useful-link intel mt-3">Terms of Service</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3">
-          <h4 class="fw-bold mt-4 Playfair">Newsletter</h4>
-          <p class="intel">Subscribe to our newsletter to receive news on update.</p>
-          <div class="btn-group mt-2">
-            <input type="email" placeholder="Enter your email" class="btn-group me-5 mt-1">
-            <button class="btn btn-group">
-              <i class="bi bi-arrow-right"></i>
-            </button>
+
+          <!-- Useful Links -->
+          <div class="col-6 col-md-3 col-lg-2 offset-lg-1">
+            <h6 class="footer-heading">Useful Links</h6>
+            <ul class="list-unstyled footer-links mt-3">
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Shopping Cart</a></li>
+              <li><a href="#">My Wishlist</a></li>
+              <li><a href="#">Our Store Info</a></li>
+            </ul>
+          </div>
+
+          <!-- Information -->
+          <div class="col-6 col-md-3 col-lg-2">
+            <h6 class="footer-heading">Information</h6>
+            <ul class="list-unstyled footer-links mt-3">
+              <li><a href="#">Order Tracking</a></li>
+              <li><a href="#">Wishlist</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-12 col-md-6 col-lg-3 offset-lg-1">
+            <h6 class="footer-heading">Newsletter</h6>
+            <p class="footer-desc mt-2">
+              Subscribe to receive news and updates.
+            </p>
+            <form class="footer-newsletter mt-3" onsubmit="return false;">
+              <div class="footer-newsletter-inner">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  aria-label="Email for newsletter"
+                />
+                <button type="submit" aria-label="Subscribe">
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
+
+        <!-- Bottom bar -->
+        <div class="footer-bottom">
+          <p class="mb-0">© 2026 Arome®. All rights reserved.</p>
+        </div>
       </div>
-    </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  
+  <!-- Scroll to Top -->
+  <button id="scrollTop" aria-label="Scroll to top"></button>
   <script>
-    AOS.init();
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollBtn.classList.toggle('visible', window.scrollY > 300);
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
 </body>
-
 </html>
